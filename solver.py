@@ -19,15 +19,13 @@ for round in range(2):
         target = ban_list[people]
         src1 = ban_list[(people + 1) % 3]
         src2 = ban_list[(people + 2) % 3]
-        # me, other, another
+        # "me, other, another" in turn
         for (another, me) in src1:
             # generate new ban
             other = another + me
             new_ban = simplify(other, another) 
             if new_ban not in target:
                 new_ban_set.add(new_ban)
-
-
 
         for (me, other) in src2:
             # generate new ban
